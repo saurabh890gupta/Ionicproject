@@ -1,0 +1,67 @@
+
+ 
+<ion-content class="demo">
+ 
+  <ion-icon (click)="goBAck()" name="md-arrow-round-back"></ion-icon>
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let img of this.product.product_image;let i = index"> 
+      
+      <img [src]="img" tappable style="height: 300px !important"(load)="onLoad()">
+   
+  
+      <div>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4">
+                <p class="p-relative d-ib"><b>DP:</b>{{product.dealer_price}}</p>
+            </ion-col>
+            <ion-col size="4">
+              <button ion-button class="d-ib item-button" *ngIf="!isStock">{{buttonVal}}</button>
+              <button ion-button class="d-ib item-button" (click)="addToCart(product,i)" *ngIf="isStock">{{buttonVal}}</button>
+              <!-- <div *ngIf="isCart"><span class="qty-text">Quantity </span>
+                <p class="qty-block"> <button ion-button (click)="increment(1)" class="d-ib item-button">+</button>
+                  {{cartValue}}<button ion-button class="d-ib item-button" (click)="increment(-1)">-</button>
+                </p>
+              </div> -->
+            </ion-col>
+            <ion-col size="4">
+              <p class="d-ib" item-right><b>MSP:</b>{{product.reseller_price}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  
+          <ion-item style="overflow-y: auto; display: block; max-height: 180px;">
+              <pre>{{descriptionVal}}</pre>
+            </ion-item>
+      </div>
+     
+        <!-- <ion-row>
+            <ion-item >
+            <p><b>DP:</b>{{this.product.dealer_price}}</p>
+            <p item-right><b>MSP:</b>{{this.product.reseller_price}}</p> 
+          </ion-item>
+        </ion-row> -->
+   
+      <!-- <pre text-wrap>{{product[i].description}}</pre>  -->
+      <!-- <pre class="prod-desc-modal">{{descriptionVal}}</pre> -->
+            <!-- <pre [innerHTML]="this.product.description"></pre>  -->
+      
+      
+   
+    </ion-slide>
+  
+
+    <!-- <ion-slide *ngFor="let prod of product">
+        <img [src]="prod.product_image" tappable (load)="onLoad()">
+        <div >
+            <ion-item>
+                <p><b>DP:</b>{{prod.dealer_price}}</p>
+                 <p item-right><b>MSP:</b>{{prod.reseller_price}}</p>
+            </ion-item> 
+            <ion-item>
+                <pre>{{descriptionVal}}</pre>
+              </ion-item>
+        </div>
+      </ion-slide> -->
+  </ion-slides>
+</ion-content>

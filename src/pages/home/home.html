@@ -1,0 +1,77 @@
+<!-- -->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong>Zaira Mart</strong>
+      <!-- <ion-icon class="cart-icon" name="cart" (click)="addCart()"></ion-icon> -->
+      <button ion-button icon-only class="cart-button" (click)="openCart()" class="openCart" >
+        <ion-badge color="secondary" >{{shared.cartquantity}}</ion-badge><ion-icon name="cart"><ion-badge color="secondary" ></ion-badge></ion-icon>
+      </button>
+    </ion-title>
+
+    <!-- <ion-buttons end>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      <button ion-button tappable (click)="goToAccount()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<!-- (ionClear)="searchEnter($event)" -->
+<ion-content padding class="animated fadeIn common-bg">
+    <ion-searchbar placeholder = "Search Product by name and code" (keyup)="searchEnter($event)"  (ionClear)="searchEnter($event)" ></ion-searchbar>
+    <ion-card>
+        <p *ngIf="IsVisible" class="nofound">No data found</p>
+        <ion-item *ngFor ="let Product of Products ; let ind=index">
+            
+            {{Product.product_code}}
+            <ion-icon ios="ios-share-alt" md="md-share-alt" class="iconshare" (click)="whatsappShare(ind)" style="position:relative" ></ion-icon>
+            <ion-list class="user-list" *ngIf="isShow && showInd==ind" style="position:absolute;right:0;top: 38px;">
+              <button ion-item menuClose class="text-1x" *ngFor="let menuItem of appMenuItems" (click)="shareWhatsapp(menuItem,ind)">
+                <span ion-text color="primary">{{menuItem.title}}</span>
+              </button>
+            </ion-list>
+
+
+            <ion-icon ios="ios-copy" md="md-copy" class="iconshare"></ion-icon>
+          <!-- <ion-slides pager="true"> -->
+              <!-- <ion-slide *ngFor="let pro of Product.product_image"> -->  
+                <div  (click)="showSliderimages(Product)">
+                <img [src]=Product.product_image[0]  height='60' width='120'/>
+                <!-- <p *ngIf= "IsVisible">no data found</p> -->
+                <ion-row>
+                  <ion-item>
+                      <p><b>DP:</b>{{Product.dealer_price}}</p>
+                       <p item-right><b>MSP:</b>{{Product.reseller_price}}</p>
+                     
+                  </ion-item> 
+                  <ion-item>
+                    <pre class="prod-desc">{{Product.description}}</pre>
+                  </ion-item>
+                    
+                 
+              </ion-row>
+              
+              <!-- </ion-slide> -->
+            </div>
+          <!-- </ion-slides> -->
+          
+        </ion-item>
+    </ion-card>
+    <ion-list class="user-list">
+      <button ion-item menuClose class="text-1x" *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
+        <ion-icon item-left [name]="menuItem.icon" color="primary"></ion-icon>
+        <span ion-text color="primary">{{menuItem.title}}</span>
+      </button>
+    </ion-list>
+  </ion-content>
+
+
+
+  

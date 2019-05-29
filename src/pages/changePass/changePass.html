@@ -1,0 +1,54 @@
+
+<ion-header>
+        <ion-navbar color="primary">
+          <ion-title>
+            <span ion-text>ChangePassword</span>
+            <i class="ion-ios-close" (click)="closePopup()" ></i>
+          </ion-title>
+        </ion-navbar>
+</ion-header>
+
+      <ion-content padding class="trips detail-bg">
+          
+            <div class="login-content">
+
+                    <!-- Logo -->
+                    <!-- <div padding-horizontal text-center class="animated fadeInDown">
+                      <div class="logo"></div>
+                      <h2 ion-text class="text-primary">
+                        <strong>Ionic 3</strong> Start Theme
+                      </h2>
+                    </div> -->
+                
+                    <!-- Login form -->
+                    <form class="list-form">
+                      <ion-item>
+                        <ion-label floating>
+                          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+                          Paasword
+                        </ion-label>
+                        <ion-input type="password" name="password" [(ngModel)]="data.password" ></ion-input>
+                      </ion-item>
+                
+                      <ion-item>
+                        <ion-label floating>
+                          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+                          Confirm Password
+                        </ion-label>
+                        <ion-input type="password" name="confirm_password"[(ngModel)]="data.confirm_password"  ></ion-input>
+                      </ion-item>
+                    </form>
+                
+                    <!-- <p text-right ion-text color="secondary" tappable (click)="forgotPass()"><strong>Forgot Password?</strong></p> -->
+                
+                    <div>
+                      <button ion-button icon-start block color="dark" tappable (click)="changePass(data)">
+                        <ion-icon name="log-in"></ion-icon>
+                        Log in
+                      </button>
+                    </div>
+            </div>
+                
+       
+      </ion-content>
+      

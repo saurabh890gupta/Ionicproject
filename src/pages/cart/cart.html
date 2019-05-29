@@ -1,0 +1,58 @@
+<!-- <ion-header>
+    <ion-navbar color="primary">
+      <ion-title>
+        <span ion-text>Cart page</span>
+
+      </ion-title>
+    </ion-navbar>
+</ion-header>
+ 
+  <ion-content padding class="trips detail-bg">
+    <div><span class="qty-text">Quantity </span>
+        <span class="qty-block"> 
+          <button ion-button (click)="increment(1)" class="d-ib item-button">+</button>
+          {{cartValue}}
+          <button style="margin-left: 2px;" ion-button class="d-ib item-button" (click)="increment(-1)">-</button>
+        </span>
+      </div>
+      <div style="margin-top:10px">
+          <button style="width: 177px !important;" ion-button class="d-ib item-button" (click)="addToCart()">Add to Cart</button>
+      </div>
+   
+  </ion-content>
+   -->
+
+   <div class="custom-cart-modal">
+    <ion-header style="height:48px !important;">
+  
+      <ion-navbar>
+        <ion-title>cart</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="closeModal()">
+                <ion-icon item-right name="ios-close-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+      </ion-navbar>
+  
+    </ion-header>
+    <!-- -->
+  
+    <ion-content padding>
+      <!-- <ion-grid>
+        <ion-row>
+          <ion-col> -->
+            <div><span class="qty-text">Quantity </span>
+              <span class="qty-block"> 
+                <button ion-button (click)="increment(-1)" class="d-ib item-button">-</button>
+                {{cartValue}}
+                <button style="margin-left: 2px;" ion-button class="d-ib item-button" (click)="increment(1)">+</button>
+              </span>
+            </div>
+            <div style="margin-top:10px">
+                <button style="width: 177px !important;" ion-button class="d-ib item-button" (click)="addToCart()">Add to Cart</button>
+            </div>
+          <!-- </ion-col>
+        </ion-row>
+      </ion-grid> -->
+    </ion-content>
+  </div>

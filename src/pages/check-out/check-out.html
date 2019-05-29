@@ -1,0 +1,52 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      <span ion-text>Address</span>
+      <i class="ion-ios-close" (click)="closePopup()" ></i>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="trips detail-bg">
+    
+      <div class="login-content">
+
+              <!-- Logo -->
+              <!-- <div padding-horizontal text-center class="animated fadeInDown">
+                <div class="logo"></div>
+                <h2 ion-text class="text-primary">
+                  <strong>Ionic 3</strong> Start Theme
+                </h2>
+              </div> -->
+          
+              <!-- Login form -->
+              <form class="list-form">
+                <ion-item>
+                
+                  <ion-label floating>
+                    <!-- <ion-icon name="address" item-start class="text-primary"></ion-icon>
+                    Address -->  
+                  </ion-label>
+                  <ion-textarea rows="5" type="text" name="address" placeholder="Enter Address" [(ngModel)]="add.address"></ion-textarea>
+                </ion-item>
+          
+               
+              </form>
+          
+              <!-- <p text-right ion-text color="secondary" tappable (click)="forgotPass()"><strong>Forgot Password?</strong></p> -->
+          
+              <div>
+                <button ion-button icon-start block color="dark" (click)="bookNow(add)"tappable *ngIf="ishide==true">
+                 
+                  Book Now
+                </button>
+                <button ion-button icon-start block color="dark" (click)="updateAdd(add)"tappable  *ngIf="isshow==true">
+                    Update address
+                  </button>
+
+              </div>
+      </div>
+          
+ 
+</ion-content>

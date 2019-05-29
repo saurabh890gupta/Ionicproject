@@ -1,0 +1,78 @@
+
+<ion-header>
+
+  <ion-navbar  color="primary">
+      <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back" class="cardSizeArrow" (click)="goBAck()"></ion-icon>
+
+      <span ion-text class="cardSizeText">cart</span>
+  
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="common-bg">
+   <form class="list-form">
+  <ion-card class="card-product animated flipInX" *ngFor="let databy of tempArray ;let ind=index">
+     
+      <ion-card-content class="pd-0">
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img [src]=databy.product_image alt="img">
+       
+          </ion-thumbnail>
+  
+          <ion-row>
+            <ion-col col-6>{{databy.product_code}}</ion-col>
+           
+          </ion-row>
+          
+          <ion-row align-items-center>
+            <ion-col col-5></ion-col>
+            <ion-col col-6>
+                <div >
+                  <span class="qty-block"> 
+                      <button style="margin-left: 2px;border-radius: 50%; " ion-button class="d-ib item-button" (click)="increment(-1,ind)">-</button>
+                     {{databy.quantity}}
+                      <button  style="border-radius: 50%;" ion-button (click)="increment(1,ind)" class="d-ib item-button">+</button>
+                   
+                   
+                  </span>
+                  <span style="position: relative;top: 3px;left: 12px;padding: 12px; "><ion-icon ios="ios-trash" md="md-trash" (click)="deleteCart(ind)"></ion-icon></span>
+                </div>
+            </ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col col-6>
+              <strong>Rs.{{databy.dealer_price}}</strong>
+            </ion-col>
+            <ion-col col-6>
+               
+            </ion-col>
+          </ion-row>
+        </ion-item>
+       
+      </ion-card-content>
+  
+    </ion-card>
+  
+  </form>
+
+ 
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+    
+          <div class="processButton">
+              <button ion-button class="btnclass" color="dark" tappable (click)="cartProcess(sum)" >
+                
+                proceed&nbsp;&nbsp;<span>Rs.{{sum}}</span>
+              </button>
+        
+           </div>
+    
+    </ion-toolbar>
+  </ion-footer>

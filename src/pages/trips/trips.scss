@@ -1,0 +1,88 @@
+page-trips,
+.trips {
+	.card {
+		border-radius: 1rem
+	}
+  // .trip {
+  //   overflow: hidden;
+
+  //   .background {
+  //     background-size: 100% auto;
+  //     background-position: center;
+
+  //     .background-filter {
+  //       height: 16rem;
+  //       background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65));
+
+  //       .align-bottom {
+  //         width: 100%;
+
+  //         h6 {
+  //           margin-top: 0;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  .ion-md-arrow-round-back:before {
+    content: "\f288";
+    z-index: 44444444;
+    position: absolute;
+    font-size: 34px;
+    color: white;
+}
+  img {
+    height:100% !important;
+    min-height: 332px !important;
+    object-fit: cover;
+     width: 100% !important;
+  }
+}
+.demo .scroll-content{
+  overflow-y: hidden !important;
+}
+.prod-desc{
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+.prod-desc-modal{
+  word-break: break-word;
+  white-space: pre;
+  text-align: left;
+  padding-left: 16px;
+}
+.center{
+  text-align:center;
+}
+.p-relative{
+  position: relative;
+}
+.btn-stock{
+  top: 25px;
+  right: 44%;
+  position: absolute;
+}
+.d-ib{
+  display: inline-block;
+}
+.qty-block{
+  font-size: 15px;
+  margin: 0px !important;
+  .qty-text{
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    
+  }
+  button{
+    height: 20px !important;
+    width: 20px !important;
+    display: inline-block;
+    position: relative;
+    top: -3px;
+  }
+  ion-input{
+    width: 50px;
+    display: inline-block;
+  }
+}

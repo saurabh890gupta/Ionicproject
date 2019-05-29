@@ -1,0 +1,108 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Order History</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Order History</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding class="animated fadeIn common-bg">
+      <ion-searchbar placeholder = "Search Product by address and order id" (keyup)="searchEnter($event)"  (ionClear)="searchEnter($event)"></ion-searchbar>
+
+        <form class="list-form">
+            <p *ngIf="IsVisible" class="nofound">No data found</p>
+       <ion-card class="card-product animated flipInX" *ngFor="let databy of tempdata ;let ind=index">
+          
+           <ion-card-content class="pd-0">
+             <ion-item>
+               <!-- <ion-thumbnail item-start>
+                <span>Order Id</span>:{{databy.order_id}}
+               </ion-thumbnail> -->
+       
+               <ion-row>
+                 <ion-col col-6>
+                    <p>Order Id :&nbsp;<span>{{databy.order_id}}</span></p>
+                    <p>Address :&nbsp;<span>{{databy.address}}</span></p>
+                    <p>Tracking Id :&nbsp;<span>{{databy.order_id}}</span></p>
+                    <p>Total: Rs.&nbsp;<span>{{databy.total}}</span></p>
+                    <p>Order date :&nbsp;<span>{{databy.date_created}}</span></p>
+                 </ion-col>
+                 <ion-col col-6>
+                   <button class="editbutton" (click)="editbutton(databy.order_id,ind)">Edit</button>
+                  </ion-col>
+               </ion-row>
+
+               <ion-card class="card-product animated flipInX" *ngFor="let prod of databy.product">
+               <ion-card-content class="pd-0">
+                  <ion-item>
+                    <!-- <ion-thumbnail item-start>
+                     <span>Order Id</span>:{{databy.order_id}}
+                    </ion-thumbnail> -->
+            
+                    <ion-row>
+                      <ion-col col-6>
+                          <p>Product code :&nbsp;<span>{{prod.product_code}}</span></p>
+                          &nbsp;
+                          <p>Quentity :&nbsp;<span>{{prod.qty}}</span></p>
+                          &nbsp;
+                          <p>Price :&nbsp;<span>{{prod.item_price}}</span></p>
+                          &nbsp;
+                      </ion-col>
+                      <ion-col col-6>
+                          <ion-item>
+                            <ion-thumbnail item-start>
+                              <img [src]=prod.product_image alt="img">
+                            </ion-thumbnail>
+                          </ion-item>
+                       </ion-col>
+                    </ion-row>
+                  </ion-item>
+            
+                </ion-card-content>
+              </ion-card>
+             
+               <!-- <ion-row align-items-center>
+                 <ion-col col-5></ion-col>
+                 <ion-col col-6>
+                     <div >
+                       <span class="qty-block"> 
+                           <button style="margin-left: 2px;border-radius: 50%; " ion-button class="d-ib item-button" (click)="increment(-1,ind)">-</button>
+                          {{databy.quantity}}
+                           <button  style="border-radius: 50%;" ion-button (click)="increment(1,ind)" class="d-ib item-button">+</button>
+                        
+                        
+                       </span>
+                       <span style="position: relative;top: 3px;left: 12px;padding: 12px; "><ion-icon ios="ios-trash" md="md-trash" (click)="deleteCart(ind)"></ion-icon></span>
+                     </div>
+                 </ion-col>
+               </ion-row>
+       
+               <ion-row>
+                 <ion-col col-6>
+                   <strong>Rs.{{databy.dealer_price}}</strong>
+                 </ion-col>
+                 <ion-col col-6>
+                    
+                 </ion-col>
+               </ion-row> -->
+             </ion-item>
+            
+           </ion-card-content>
+       
+         </ion-card>
+       
+       </form>
+     
+      
+     
+    
+     
+</ion-content>
